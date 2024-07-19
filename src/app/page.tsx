@@ -54,7 +54,7 @@ export default function Home() {
                 duration: 0.5,
                 ease: [0.4, 0.0, 0.2, 1],
               }}
-              className="text-2xl px-4 md:text-4xl lg:text-5xl font-boldtext-white max-w-4xl leading-relaxed lg:leading-snug text-center mx-auto "
+              className="text-2xl px-4 md:text-4xl lg:text-5xl font-bold text-white dark:text-white max-w-4xl leading-relaxed lg:leading-snug text-center mx-auto "
             >
               A3 Dynamic Solutions
             </motion.h1>
@@ -71,9 +71,9 @@ export default function Home() {
                 duration: 0.5,
                 ease: [0.4, 0.0, 0.2, 1],
               }}
-              className="text-xl px-4 md:text-3xl lg:text-4xl font-bold text-centertext-white max-w-4xl leading-relaxed lg:leading-snug mx-auto "
+              className="text-xl px-4 md:text-3xl lg:text-4xl font-bold text-center text-white dark:text-white max-w-4xl leading-relaxed lg:leading-snug mx-auto "
             >
-              <Highlight className="text-white">
+              <Highlight className="text-white dark:text-white">
                 Step up your business
               </Highlight>
             </motion.h1>
@@ -84,7 +84,7 @@ export default function Home() {
         <div className="flex md:flex-col md:items-start md:justify-center py-28 px-12">
           <div className="md:flex md:gap-4">
             <div className="flex items-center justify-center">
-              <h1 className="text-2xl mb-4 px-4 md:text-4xl lg:text-5xl font-boldtext-white text-center min-h-16 max-h-16">
+              <h1 className="text-2xl mb-4 px-4 md:text-4xl lg:text-5xl font-bold text-white dark:text-white text-center min-h-16 max-h-16">
                 Baseados em <FlipWords words={wordsforflip} />
               </h1>
             </div>
@@ -105,10 +105,10 @@ export default function Home() {
 
         {/* Serviços */}
         <div className=" bg-neutral-950 py-28">
-          <h1 className="text-2xl mb-4 px-4 md:text-4xl lg:text-5xl font-boldtext-white leading-relaxed text-center">
+          <h1 className="text-2xl mb-4 px-4 md:text-4xl lg:text-5xl font-bold text-white dark:text-white leading-relaxed text-center">
             Serviços
           </h1>
-          <p className="text-sm mb-4 px-4 md:text-lg lg:text-xl font-boldtext-neutral-300 leading-relaxed text-center">
+          <p className="text-sm mb-4 px-4 md:text-lg lg:text-xl font-bold text-neutral-300 dark:text-neutral-300 leading-relaxed text-center">
             A A3DS leva-o ao mais alto nível, desde contabilidade a Web Design.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 relative z-10 py-14 px-12 min-w-full mx-auto">
@@ -267,27 +267,27 @@ const Feature = ({
   return (
     <div
       className={cn(
-        "flex flex-col lg:border-r  py-10 relative group/feature border-neutral-800",
-        (index === 0 || index === 4) && "lg:border-lborder-neutral-800",
-        index < 4 && "lg:border-bborder-neutral-800"
+        "flex flex-col lg:border-r  py-10 relative group/feature border-neutral-800 dark:border-neutral-800",
+        (index === 0 || index === 4) && "lg:border-l border-neutral-800 dark:border-neutral-800",
+        index < 4 && "lg:border-b border-neutral-800 dark:border-neutral-800"
       )}
     >
       {index < 4 && (
-        <div className="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-t from-neutral-100 from-neutral-800 to-transparent pointer-events-none" />
+        <div className="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-t from-neutral-800 dark:from-neutral-800 to-transparent pointer-events-none" />
       )}
       {index >= 4 && (
-        <div className="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-b from-neutral-100 from-neutral-800 to-transparent pointer-events-none" />
+        <div className="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-b from-neutral-800 dark:from-neutral-800 to-transparent pointer-events-none" />
       )}
-      <div className="mb-4 relative z-10 px-10 text-neutral-400">
+      <div className="mb-4 relative z-10 px-10 text-neutral-400 dark:text-neutral-400">
         {icon}
       </div>
       <div className="text-lg font-bold mb-2 relative z-10 px-10">
-        <div className="absolute left-0 inset-y-0 h-6 group-hover/feature:h-8 w-1 rounded-tr-full rounded-br-fullbg-neutral-700 group-hover/feature:bg-blue-300 transition-all duration-200 origin-center" />
-        <span className="group-hover/feature:translate-x-2 transition duration-200 inline-blocktext-neutral-100">
+        <div className="absolute left-0 inset-y-0 h-6 group-hover/feature:h-8 w-1 rounded-tr-full rounded-br-full bg-neutral-700 dark:bg-neutral-700 group-hover/feature:bg-blue-300 transition-all duration-200 origin-center" />
+        <span className="group-hover/feature:translate-x-2 transition duration-200 inline-block text-neutral-100 dark:text-neutral-100">
           {title}
         </span>
       </div>
-      <p className="text-smtext-neutral-300 max-w-xs relative z-10 px-10">
+      <p className="text-sm text-neutral-300 dark:text-neutral-300 max-w-xs relative z-10 px-10">
         {description}
       </p>
     </div>
