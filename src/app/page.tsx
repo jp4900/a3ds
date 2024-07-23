@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Logo from "../../../public/images/logo/logo.png";
+import aboutbanner from "../../public/images/about-banner.png";
 
 import { HeroHighlight, Highlight } from "./components/ui/hero-highlight";
 import { BentoGrid, BentoGridItem } from "./components/ui/bento-grid";
@@ -35,6 +35,13 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import navhomescreen from "../../public/images/navhomescreen.jpg";
 
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/app/components/ui/accordion";
+
 export default function Home() {
   return (
     <>
@@ -57,7 +64,7 @@ export default function Home() {
               }}
               className="text-2xl px-4 md:text-4xl lg:text-5xl font-bold text-white dark:text-white max-w-4xl leading-relaxed lg:leading-snug text-center mx-auto "
             >
-              A3 Dynamic Solutions
+              <span className="text-blue-300">A3</span> Dynamic Solutions
             </motion.h1>
             <motion.h1
               initial={{
@@ -82,30 +89,77 @@ export default function Home() {
         </div>
 
         {/* Confiança e Valores */}
-        <div className="flex md:flex-col md:items-start md:justify-center py-28 px-12">
-          <div className="md:flex md:gap-4">
-            <div className="flex items-center justify-center">
-              <h1 className="text-2xl mb-4 px-4 md:text-4xl lg:text-5xl font-bold text-white dark:text-white text-center min-h-16 max-h-16">
-                Baseados em <FlipWords words={wordsforflip} />
-              </h1>
-            </div>
-            <BentoGrid className="md:max-w-[60vw]">
-              {items.map((item, i) => (
-                <BentoGridItem
-                  key={i}
-                  title={item.title}
-                  description={item.description}
-                  header={item.header}
-                  icon={item.icon}
-                  className={i === 3 ? "md:col-span-2" : ""}
+        <div id="about">
+          <div className="flex md:flex-col md:items-start md:justify-center py-28 px-20">
+            <div className="md:flex md:gap-4">
+              <div className="flex items-center justify-center">
+                <Image
+                  src={aboutbanner}
+                  alt="Confiança e Valores"
+                  className="md:max-w-[45vw] md:max-h-[75vh]"
                 />
-              ))}
-            </BentoGrid>
+              </div>
+              <div className="md:box-border">
+                <h1 className="text-2xl px-4 md:text-3xl lg:text-4xl font-bold text-white dark:text-white min-h-16 max-h-16 mb-36 md:mb-20">
+                  Experiência em gestão de ERP, consultas e soluções para
+                  clientes em todo o mundo.
+                </h1>
+                <Accordion type="single" collapsible className="px-4">
+                  <AccordionItem value="item-1">
+                    <AccordionTrigger>A empresa</AccordionTrigger>
+                    <AccordionContent>
+                      A A3 Dynamics Solutions é uma empresa de consultoria de
+                      sitemas de informação, assente em tecnologias Microsoft.
+                    </AccordionContent>
+                  </AccordionItem>
+                  <AccordionItem value="item-2">
+                    <AccordionTrigger>A Nossa Equipa</AccordionTrigger>
+                    <AccordionContent>
+                      A nossa equipa é composta por consultores com uma vasta
+                      experiência na implementação de projectos nos mais
+                      variados ramos de atividade: Automóvel, Banca,
+                      Farmacêutica, Logistíca, Produção, Retalho, Sector
+                      Público, Serviços, etc.
+                    </AccordionContent>
+                  </AccordionItem>
+                  <AccordionItem value="item-3">
+                    <AccordionTrigger>Conhecimento do ERP</AccordionTrigger>
+                    <AccordionContent>
+                      Conhecemos o ERP da Microsoft como ninguém… Fornecemos
+                      soluções desde o ano 2000 nas versões Navision Financials,
+                      Navision Attain, Microsoft Dynamics NAV e Microsoft
+                      Business Central.
+                    </AccordionContent>
+                  </AccordionItem>
+                </Accordion>
+              </div>
+            </div>
+          </div>
+          <div className="flex md:flex-col md:items-start md:justify-center px-12 py-28">
+            <div className="md:flex md:gap-4">
+              <div className="flex items-center justify-center">
+                <h1 className="text-2xl mb-4 px-4 md:text-4xl lg:text-5xl font-bold text-white dark:text-white text-center min-h-16 max-h-16">
+                  Baseados em <FlipWords words={wordsforflip} />
+                </h1>
+              </div>
+              <BentoGrid className="md:max-w-[60vw]">
+                {items.map((item, i) => (
+                  <BentoGridItem
+                    key={i}
+                    title={item.title}
+                    description={item.description}
+                    header={item.header}
+                    icon={item.icon}
+                    className={i === 3 ? "md:col-span-2" : ""}
+                  />
+                ))}
+              </BentoGrid>
+            </div>
           </div>
         </div>
 
         {/* Serviços */}
-        <div className=" bg-neutral-950 py-28">
+        <div className=" bg-neutral-950 py-28" id="services">
           <h1 className="text-2xl mb-4 px-4 md:text-4xl lg:text-5xl font-bold text-white dark:text-white leading-relaxed text-center">
             Serviços
           </h1>
@@ -120,7 +174,7 @@ export default function Home() {
         </div>
 
         {/* NAV */}
-        <div className="bg-neutral-50">
+        <div className="bg-neutral-50" id="nav">
           <ContainerScroll
             titleComponent={
               <>
@@ -269,7 +323,8 @@ const Feature = ({
     <div
       className={cn(
         "flex flex-col lg:border-r  py-10 relative group/feature border-neutral-800 dark:border-neutral-800",
-        (index === 0 || index === 4) && "lg:border-l border-neutral-800 dark:border-neutral-800",
+        (index === 0 || index === 4) &&
+          "lg:border-l border-neutral-800 dark:border-neutral-800",
         index < 4 && "lg:border-b border-neutral-800 dark:border-neutral-800"
       )}
     >
@@ -296,10 +351,10 @@ const Feature = ({
 };
 
 const content = [
-  
   {
     title: "Recursos Humanos",
-    description: "O NAV garante a gestão eficiente e eficaz do seu capital humano. Automatize tarefas repetitivas, centralize os seus dados de RH, melhore a sua tomada de decisoes, aumente a produtividade e muito mais.",
+    description:
+      "O NAV garante a gestão eficiente e eficaz do seu capital humano. Automatize tarefas repetitivas, centralize os seus dados de RH, melhore a sua tomada de decisoes, aumente a produtividade e muito mais.",
     content: (
       <div className="h-full w-full  flex items-center justify-center text-white">
         <Image
@@ -314,7 +369,8 @@ const content = [
   },
   {
     title: "Contabilidade",
-    description:"O BC é um software de contabilidade completo que oferece tudo para gerir as suas finanças com precisão e eficiência. Automatize tarefas, obtenha relatórios abrangentes, garanta conformidade fiscal, melhore o fluxo de capital e muito mais.",
+    description:
+      "O BC é um software de contabilidade completo que oferece tudo para gerir as suas finanças com precisão e eficiência. Automatize tarefas, obtenha relatórios abrangentes, garanta conformidade fiscal, melhore o fluxo de capital e muito mais.",
     content: (
       <div className="h-full w-full  flex items-center justify-center text-white">
         <Image

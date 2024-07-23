@@ -18,11 +18,7 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
+  background: 
     rgb(var(--background-start-rgb));
 }
 
@@ -35,4 +31,8 @@ body {
 .blur-backdrop-filter {
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
+}
+
+html {
+  scroll-behavior: smooth;
 }
