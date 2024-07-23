@@ -31,3 +31,8 @@ body {
     text-wrap: balance;
   }
 }
+
+.blur-backdrop-filter {
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}

@@ -4,8 +4,8 @@ import Logo from "../../../public/images/logo/logo.png";
 
 const Navbar = () => {
   return (
-    <nav className="z-[50] top-0 w-full border-white/[0.1] dark:border-white/[0.1]">
-      <div className="px-10 md:px-24 flex h-20 items-center max-w-[88rem] mx-auto justify-between">
+    <nav className="z-[50] top-0 w-full bg-neutral-900 bg-opacity-80 bg-clip-padding blur-backdrop-filter border-white/[0.1] dark:border-white/[0.1] sticky ">
+      <div className="px-10 md:px-24 flex h-16 items-center max-w-[88rem] mx-auto justify-between">
         <Link href="/">
           <div className="flex items-center">
             <Image
@@ -18,6 +18,23 @@ const Navbar = () => {
             <h1 className="font-bold text-xl md:text-2xl">A3DS</h1>
           </div>
         </Link>
+        <div className="flex items-center space-x-6">
+          <Link href="/about">
+            <h1 className="font-semibold text-lg text-white hover:text-blue-300">Quem Somos</h1>
+          </Link>
+          <Link href="/services">
+          <h1 className="font-semibold text-lg text-white hover:text-blue-300">Serviços</h1>
+          </Link>
+          <Link href="/services">
+          <h1 className="font-semibold text-lg text-white hover:text-blue-300">Business Central</h1>
+          </Link>
+          <Link href="/services">
+          <h1 className="font-semibold text-lg text-white hover:text-blue-300">Soluções</h1>
+          </Link>
+          <Link href="/parcerias">
+          <h1 className="font-semibold text-lg text-white hover:text-blue-300">Parcerias</h1>
+          </Link>
+        </div>
         <Link href="/contact">
           <button className="inline-flex h-10 md:h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-4 font-medium text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
             Contacte-nos
