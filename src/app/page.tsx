@@ -24,6 +24,7 @@ import {
 import { FlipWords } from "./components/ui/flip-words";
 import { ContainerScroll } from "./components/ui/container-scroll-animation";
 import { StickyScroll } from "./components/ui/sticky-scroll-reveal";
+import { ParallaxScroll } from "./components/ui/parallax-scroll";
 
 import Image, { StaticImageData } from "next/image";
 import HandsShaking from "../../public/images/hands-shaking.png";
@@ -34,6 +35,7 @@ import Speed from "../../public/images/speed.png";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import navhomescreen from "../../public/images/navhomescreen.jpg";
+import navitems from "../../public/images/navitems.jpg";
 
 import {
   Accordion,
@@ -86,8 +88,7 @@ export default function Home() {
               </Highlight>
             </motion.h1>
           </HeroHighlight>
-        </div>a
-
+        </div>
         {/* Confiança e Valores */}
         <div id="about">
           <div className="flex md:flex-col md:items-start md:justify-center py-28 px-20">
@@ -157,7 +158,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-
         {/* Serviços */}
         <div className=" bg-neutral-950 py-28" id="services">
           <h1 className="text-2xl mb-4 px-4 md:text-4xl lg:text-5xl font-bold text-white dark:text-white leading-relaxed text-center">
@@ -172,9 +172,8 @@ export default function Home() {
             ))}
           </div>
         </div>
-
         {/* NAV */}
-        <div className="bg-neutral-50" id="nav">
+        <div className="bg-neutral-50 p-10" id="nav">
           <ContainerScroll
             titleComponent={
               <>
@@ -197,6 +196,11 @@ export default function Home() {
             />
           </ContainerScroll>
           <StickyScroll content={content} />
+        </div>
+
+        {/* Footer */}
+        <div id="#parcerias">
+          <ParallaxScroll images={imagesarray} />
         </div>
       </main>
     </>
@@ -354,7 +358,7 @@ const content = [
   {
     title: "Recursos Humanos",
     description:
-      "O NAV garante a gestão eficiente e eficaz do seu capital humano. Automatize tarefas repetitivas, centralize os seus dados de RH, melhore a sua tomada de decisoes, aumente a produtividade e muito mais.",
+      "O NAV garante a gestão eficiente e eficaz do seu capital humano. Automatize tarefas repetitivas, centralize os seus dados de RH, melhore a sua tomada de decisões, aumente a produtividade e muito mais.",
     content: (
       <div className="h-full w-full  flex items-center justify-center text-white">
         <Image
@@ -402,11 +406,11 @@ const content = [
   {
     title: "Inventário",
     description:
-      "See changes as they happen. With our platform, you can track every modification in real time. No more confusion about the latest version of your project. Say goodbye to the chaos of version control and embrace the simplicity of real-time updates.",
+      "O NAV oferece controlo total sobre os os seus stocks. Siga os movimentos do seu stock em tempo real, identifique e resolva problemas de stock, tome decisões informadas sobre compras e vendas, evite quebras de stock e custos excessivos e muito mais.",
     content: (
       <div className="h-full w-full  flex items-center justify-center text-white">
         <Image
-          src="/linear.webp"
+          src={navitems}
           width={300}
           height={300}
           className="h-full w-full object-cover"
@@ -415,4 +419,13 @@ const content = [
       </div>
     ),
   },
+  {
+    title: "",
+    description: "",
+    content: (
+      <div className="h-full w-full  flex items-center justify-center text-white"></div>
+    ),
+  },
 ];
+
+const imagesarray = ["asdasd", "asdasdasd", "asdasdasd"];

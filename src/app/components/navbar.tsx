@@ -20,19 +20,29 @@ const Navbar = () => {
         </Link>
         <div className="flex items-center space-x-6">
           <Link href="#about">
-            <h1 className="font-semibold text-lg text-white hover:text-blue-300">Quem Somos</h1>
+            <h1 className="font-semibold text-lg text-white hover:text-blue-300">
+              Quem Somos
+            </h1>
           </Link>
           <Link href="#services">
-          <h1 className="font-semibold text-lg text-white hover:text-blue-300">Serviços</h1>
+            <h1 className="font-semibold text-lg text-white hover:text-blue-300">
+              Serviços
+            </h1>
           </Link>
           <Link href="#nav">
-          <h1 className="font-semibold text-lg text-white hover:text-blue-300">Business Central</h1>
+            <h1 className="font-semibold text-lg text-white hover:text-blue-300">
+              Business Central
+            </h1>
           </Link>
           <Link href="/services">
-          <h1 className="font-semibold text-lg text-white hover:text-blue-300">Soluções</h1>
+            <h1 className="font-semibold text-lg text-white hover:text-blue-300">
+              Soluções
+            </h1>
           </Link>
-          <Link href="/parcerias">
-          <h1 className="font-semibold text-lg text-white hover:text-blue-300">Parcerias</h1>
+          <Link href="#parcerias">
+            <h1 className="font-semibold text-lg text-white hover:text-blue-300">
+              Parcerias
+            </h1>
           </Link>
         </div>
         <Link href="/contact">
