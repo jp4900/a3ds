@@ -86,7 +86,7 @@ export default function Home() {
               </Highlight>
             </motion.h1>
           </HeroHighlight>
-        </div>
+        </div>a
 
         {/* Confiança e Valores */}
         <div id="about">
