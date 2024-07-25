@@ -1,10 +1,39 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import Logo from "../../../public/images/logo/logo.png";
+import { useEffect, useState } from "react";
 
 const Navbar = () => {
+  const [isFixed, setIsFixed] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const navbarHeight = document.getElementById("navbar")!.offsetHeight;
+      const viewHeight = window.innerHeight;
+
+      if (scrollPosition > viewHeight - navbarHeight) {
+        setIsFixed(true);
+      } else {
+        setIsFixed(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <nav className="z-[50] top-0 w-full bg-neutral-900 bg-opacity-80 bg-clip-padding blur-backdrop-filter border-white/[0.1] dark:border-white/[0.1] sticky ">
+    <nav
+      id="navbar"
+      className={`z-50 w-full bg-[rgba(15,15,15)] bg-opacity-80 bg-clip-padding blur-backdrop-filter border-white/[0.1] dark:border-white/[0.1] transition-all duration-300 ${
+        isFixed ? "sticky top-0" : "absolute bottom-0"
+      }`}
+    >
       <div className="px-10 md:px-24 flex h-16 items-center max-w-[88rem] mx-auto justify-between">
         <Link href="/">
           <div className="flex items-center">

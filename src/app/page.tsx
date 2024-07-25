@@ -198,9 +198,9 @@ export default function Home() {
           <StickyScroll content={content} />
         </div>
 
-        {/* Footer */}
+        {/* Parcerias */}
         <div id="#parcerias">
-          <ParallaxScroll images={imagesarray} />
+          {/* <ParallaxScroll images={imagesarray} /> */}
         </div>
       </main>
     </>
