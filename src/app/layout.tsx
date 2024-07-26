@@ -19,10 +19,10 @@ export default function RootLayout({
   return (
     <html className="dark">
       <body className={inter.className}>
-      <Navbar />
+        <Navbar />
         {children}
         <Footer />
-        </body>
+      </body>
     </html>
   );
 }
