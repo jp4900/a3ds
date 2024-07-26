@@ -163,7 +163,7 @@ export default function Home() {
           </div>
         </div>
         {/* Serviços */}
-        <div className=" bg-neutral-950 py-28" id="services">
+        <div className=" bg-neutral-950 py-28 h-screen" id="services">
           <h1 className="text-2xl mb-4 px-4 md:text-4xl lg:text-5xl font-bold text-white dark:text-white leading-relaxed text-center">
             Serviços
           </h1>
