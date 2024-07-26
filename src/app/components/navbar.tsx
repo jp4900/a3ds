@@ -63,7 +63,7 @@ const Navbar = () => {
               Business Central
             </h1>
           </Link>
-          <Link href="/#services">
+          <Link href="/#solutions">
             <h1 className="font-semibold text-lg text-white hover:text-blue-300">
               Soluções
             </h1>

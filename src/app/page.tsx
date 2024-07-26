@@ -36,6 +36,7 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import navhomescreen from "../../public/images/navhomescreen.jpg";
 import navitems from "../../public/images/navitems.png";
+import { FeaturesSectionDemo } from "./test/page";
 
 import {
   Accordion,
@@ -136,10 +137,13 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="flex md:flex-col md:items-start md:justify-center px-12 py-28">
+          <div className="flex md:flex-col md:items-start md:justify-center px-12 py-28 ">
             <div className="md:flex md:gap-4">
               <div className="flex items-center justify-center">
-                <h1 className="text-2xl mb-4 px-4 md:text-4xl lg:text-5xl font-bold text-white dark:text-white text-center min-h-16 max-h-16">
+                <h1
+                  className="text-2xl mb-4 px-4 md:text-4xl lg:text-5xl font-bold text-white dark:text-white text-center min-h-16 max-h-16"
+                  style={{ width: `${wordsforflip.join(" ").length * 10}px` }}
+                >
                   Baseados em <FlipWords words={wordsforflip} />
                 </h1>
               </div>
@@ -198,9 +202,9 @@ export default function Home() {
           <StickyScroll content={content} />
         </div>
 
-        {/* Parcerias */}
-        <div id="#parcerias">
-          {/* <ParallaxScroll images={imagesarray} /> */}
+        {/* Soluções */}
+        <div id="solutions" className="bg-black p-10">
+          <FeaturesSectionDemo />
         </div>
       </main>
     </>
