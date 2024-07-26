@@ -35,7 +35,7 @@ import Speed from "../../public/images/speed.png";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import navhomescreen from "../../public/images/navhomescreen.jpg";
-import navitems from "../../public/images/navitems.jpg";
+import navitems from "../../public/images/navitems.png";
 
 import {
   Accordion,
