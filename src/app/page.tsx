@@ -1,8 +1,22 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import aboutbanner from "../../public/images/about-banner.png";
 
+import parceiro1 from "../../public/images/partners/Imagem1.png";
+import parceiro2 from "../../public/images/partners/Imagem2.png";
+import parceiro3 from "../../public/images/partners/Imagem3.png";
+import parceiro4 from "../../public/images/partners/Imagem4.png";
+import parceiro5 from "../../public/images/partners/Imagem5.png";
+import parceiro6 from "../../public/images/partners/Imagem6.png";
+import parceiro7 from "../../public/images/partners/Imagem7.png";
+import parceiro8 from "../../public/images/partners/Imagem8.png";
+import parceiro9 from "../../public/images/partners/Imagem9.png";
+import parceiro10 from "../../public/images/partners/Imagem10.png";
+import parceiro11 from "../../public/images/partners/Imagem11.png";
+
+import Partners from "./components/partners";
 import { HeroHighlight, Highlight } from "./components/ui/hero-highlight";
 import { BentoGrid, BentoGridItem } from "./components/ui/bento-grid";
 import {
@@ -19,6 +33,7 @@ import {
   IconChartHistogram,
   IconCurrencyEuro,
   IconReportMoney,
+  IconChevronDown,
 } from "@tabler/icons-react";
 
 import { FlipWords } from "./components/ui/flip-words";
@@ -37,6 +52,8 @@ import Link from "next/link";
 import navhomescreen from "../../public/images/navhomescreen.jpg";
 import navitems from "../../public/images/navitems.png";
 import { FeaturesSectionDemo } from "./test/page";
+import Navbar from "./components/navbar";
+import Footer from "./components/footer";
 
 import {
   Accordion,
@@ -48,6 +65,7 @@ import {
 export default function Home() {
   return (
     <>
+      <Navbar />
       <main>
         {/* Hero */}
         <div>
@@ -177,7 +195,7 @@ export default function Home() {
           </div>
         </div>
         {/* NAV */}
-        <div className="bg-neutral-50 p-10" id="nav">
+        <div className="bg-neutral-50" id="nav">
           <ContainerScroll
             titleComponent={
               <>
@@ -206,7 +224,18 @@ export default function Home() {
         <div id="solutions" className="bg-black p-10">
           <FeaturesSectionDemo />
         </div>
+        {/* Parcerias */}
+        <div className="bg-neutral-950 py-3 h-screen" id="parcerias">
+          <Partners
+            partners={partnersData.map((partner) => ({
+              ...partner,
+              logo: Object.values(partner.logo)[0] as string,
+            }))}
+          />
+        </div>
       </main>
+
+      <Footer />
     </>
   );
 }
@@ -327,10 +356,16 @@ const Feature = ({
   icon: React.ReactNode;
   index: number;
 }) => {
+  const [isCollapsed, setIsCollapsed] = useState(true);
+
+  const toggleCollapse = () => {
+    setIsCollapsed(!isCollapsed);
+  };
+
   return (
     <div
       className={cn(
-        "flex flex-col lg:border-r  py-10 relative group/feature border-neutral-800 dark:border-neutral-800",
+        "flex flex-col lg:border-r py-10 relative group/feature border-neutral-800 dark:border-neutral-800",
         (index === 0 || index === 4) &&
           "lg:border-l border-neutral-800 dark:border-neutral-800",
         index < 4 && "lg:border-b border-neutral-800 dark:border-neutral-800"
@@ -342,18 +377,29 @@ const Feature = ({
       {index >= 4 && (
         <div className="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-b from-neutral-800 dark:from-neutral-800 to-transparent pointer-events-none" />
       )}
-      <div className="mb-4 relative z-10 px-10 text-neutral-400 dark:text-neutral-400">
-        {icon}
-      </div>
-      <div className="text-lg font-bold mb-2 relative z-10 px-10">
+
+      <div
+        className="text-lg font-bold mb-2 relative z-10 px-10 cursor-pointer"
+        onClick={toggleCollapse}
+      >
         <div className="absolute left-0 inset-y-0 h-6 group-hover/feature:h-8 w-1 rounded-tr-full rounded-br-full bg-neutral-700 dark:bg-neutral-700 group-hover/feature:bg-blue-300 transition-all duration-200 origin-center" />
         <span className="group-hover/feature:translate-x-2 transition duration-200 inline-block text-neutral-100 dark:text-neutral-100">
-          {title}
+          {icon} {title}
         </span>
+        <IconChevronDown
+          className="ml-2 inline-block transition-transform duration-300"
+          style={{ transform: isCollapsed ? "rotate(0deg)" : "rotate(180deg)" }}
+          size={18}
+        />{" "}
       </div>
-      <p className="text-sm text-neutral-300 dark:text-neutral-300 max-w-xs relative z-10 px-10">
-        {description}
-      </p>
+      <div
+        className="overflow-hidden transition-all duration-300 ease-in-out"
+        style={{ maxHeight: isCollapsed ? "0" : "1000px" }}
+      >
+        <p className="text-sm text-neutral-300 dark:text-neutral-300 max-w-xs relative z-10 px-10">
+          {description}
+        </p>
+      </div>
     </div>
   );
 };
@@ -394,7 +440,7 @@ const content = [
   {
     title: "Compras e vendas",
     description:
-      "O NAV otimiza os processos de compra e venda. Automatize tarefas, tenha visibilidade completa da cadeia de , gerencie relacionamentos com fornecedores e clientes, aumente a lucratividade e muito mais.",
+      "O NAV otimiza os processos de compra e venda. Automatize tarefas, tenha visibilidade completa da cadeia de produção, gerencie relacionamentos com fornecedores e clientes, aumente a lucratividade e muito mais.",
     content: (
       <div className="h-full w-full  flex items-center justify-center text-white">
         <Image
@@ -432,4 +478,67 @@ const content = [
   },
 ];
 
-const imagesarray = ["asdasd", "asdasdasd", "asdasdasd"];
+const partnersData = [
+  {
+    id: 1,
+    name: "Winning",
+    logo: { parceiro1 },
+    website: "https://winning-consulting.com/",
+  },
+  {
+    id: 2,
+    name: "SmartStep",
+    logo: { parceiro2 },
+    website: "https://www.smartstep.pt/",
+  },
+  {
+    id: 3,
+    name: "EverEdge",
+    logo: { parceiro3 },
+    website: "https://www.everedge.pt/",
+  },
+  { id: 4, name: "Dweb", logo: { parceiro4 }, website: "https://www.dweb.pt/" },
+  {
+    id: 5,
+    name: "CpcIt4All",
+    logo: { parceiro5 },
+    website: "https://www.cpcit4all.pt/",
+  },
+  {
+    id: 6,
+    name: "ATC Portugal",
+    logo: { parceiro6 },
+    website: "https://atcportugal.com/",
+  },
+  {
+    id: 7,
+    name: "WayWard",
+    logo: { parceiro7 },
+    website: "https://waywardcomputers.com/",
+  },
+  {
+    id: 8,
+    name: "EuPago",
+    logo: { parceiro8 },
+    website: "https://www.eupago.pt/",
+  },
+  {
+    id: 9,
+    name: "Helmo",
+    logo: { parceiro9 },
+    website: "https://www.helmo.pt/",
+  },
+  {
+    id: 10,
+    name: "PSDesign",
+    logo: { parceiro10 },
+    website: "http://www.surpriseland.pt/",
+  },
+  {
+    id: 11,
+    name: "Assismatica",
+    logo: { parceiro11 },
+    website: "https://www.assismatica.pt/",
+  },
+  // Add more partners as needed
+];
