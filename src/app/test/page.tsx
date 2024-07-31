@@ -114,7 +114,7 @@ const FeatureDescription = ({ children }: { children?: React.ReactNode }) => {
   );
 };
 
-export const SkeletonOne = () => {
+const SkeletonOne = () => {
   return (
     <Link
       href="https://a3ds.pt/helpdesk"
@@ -138,7 +138,7 @@ export const SkeletonOne = () => {
 
 
 
-export const SkeletonTwo = () => {
+const SkeletonTwo = () => {
   return (
     <div className="relative flex py-8 px-2 gap-10 h-full">
       <div className="w-full  mx-auto bg-white dark:bg-neutral-900 shadow-2xl group h-80">
@@ -157,7 +157,7 @@ export const SkeletonTwo = () => {
   );
 };
 
-export const SkeletonThree = () => {
+const SkeletonThree = () => {
   return (
     <div className="relative flex py-8 px-2 gap-10 h-full">
       <div className="w-full  mx-auto bg-white dark:bg-neutral-900 shadow-2xl group h-80">
@@ -176,7 +176,7 @@ export const SkeletonThree = () => {
   );
 };
 
-export const SkeletonFour = () => {
+const SkeletonFour = () => {
   return (
     <div className="h-60 md:h-60  flex flex-col items-center relative bg-transparent dark:bg-transparent mt-10">
       <div className="w-full  mx-auto bg-white dark:bg-neutral-900 shadow-2xl group h-80">
@@ -195,7 +195,7 @@ export const SkeletonFour = () => {
   );
 };
 
-export const SkeletonFive = () => {
+const SkeletonFive = () => {
   return (
     <div className="relative flex py-8 px-2 gap-10 h-full">
       <div className="w-full  mx-auto bg-white dark:bg-neutral-900 shadow-2xl group h-80">
