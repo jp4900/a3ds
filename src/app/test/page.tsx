@@ -12,7 +12,7 @@ import fateletronicasolution from "../../../public/images/fateletronicasolution.
 import contpublicasolution from "../../../public/images/contpublicasolution.jpg";
 import contanaliticasolution from "../../../public/images/contanaliticasolution.jpg";
 
-export function FeaturesSectionDemo() {
+export default function FeaturesSectionDemo() {
   const features = [
     {
       title: "Portal de Tickets 24/7",
