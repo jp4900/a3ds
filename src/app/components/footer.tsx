@@ -22,13 +22,6 @@ const Footer = () => {
           >
             Contacte-nos
           </Link>
-          <div className="w-px h-5 bg-neutral-700"></div>
-          <Link
-            href="/terms"
-            className="text-sm text-neutral-600 hover:text-neutral-500"
-          >
-            Termos e Serviços
-          </Link>
 
         </div>
       </div>

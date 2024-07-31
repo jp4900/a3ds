@@ -4,7 +4,6 @@ import { Label } from "../components/ui/label";
 import { Input } from "../components/ui/input";
 import { cn } from "@/lib/utils";
 import Navbar from "../components/navbar";
-import Footer from "../components/footer";
 
 export default function Contact() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {

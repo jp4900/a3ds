@@ -6,9 +6,11 @@ import { motion } from "framer-motion";
 import { IconBrandYoutubeFilled } from "@tabler/icons-react";
 import Link from "next/link";
 import HelpdeskSolution from "../../../public/images/helpdesksolution.png";
-import contabilidadeSolution from "../../../public/images/contabilidadesolution.jpg";
-import interfacesolution from "../../../public/images/interfacesolution.jpg";
 import websitesolution from "../../../public/images/websitesolution.jpg";
+import colaboradorsolution from "../../../public/images/colaboradorsolution.jpg";
+import fateletronicasolution from "../../../public/images/fateletronicasolution.jpg";
+import contpublicasolution from "../../../public/images/contpublicasolution.jpg";
+import contanaliticasolution from "../../../public/images/contanaliticasolution.jpg";
 
 export function FeaturesSectionDemo() {
   const features = [
@@ -21,35 +23,42 @@ export function FeaturesSectionDemo() {
         "col-span-1 lg:col-span-4 border-b lg:border-r border-neutral-800",
     },
     {
-      title: "Interfaces com outros sistemas",
+      title: "Portal do Colaborador",
       description:
-        "Conecte o seu Business Central com o seu software de produção, pesagem, etc.",
+        "Assiduidade, marcação de férias, recibos...? Temos a solução.",
       skeleton: <SkeletonTwo />,
       className: "border-b col-span-1 lg:col-span-2 border-neutral-800",
     },
     {
-      title: "Contabilidade",
+      title: "Faturação Eletrónica",
       description:
-        "Conte com o Business Central e os nossos técnicos para o ajudar em tudo.",
+        "Envie e receba documentos de forma desmaterializada com os seus clientes e fornecedores.",
       skeleton: <SkeletonThree />,
-      className: "col-span-1 lg:col-span-3 lg:border-r  border-neutral-800",
+      className: "border-b col-span-1 lg:col-span-2 lg:border-r  border-neutral-800",
     },
     {
-      title: "Desenvolvimento Web",
+      title: "Contabilidade Pública",
       description:
-        "Conte connosco um novo site para rejuvenescer o seu negócio, um portal interno ou uma loja on-line.",
+        "Autarquias Locais, Serviços Municipalizados, Empresas Municipais? A nossa solução adapta-se a qualquer empresa Pública ou de capitais Públicos.",
       skeleton: <SkeletonFour />,
-      className: "col-span-1 lg:col-span-3 border-b lg:border-none",
+      className: "border-b col-span-1 lg:col-span-2 lg:border-r  border-neutral-800",
+    },
+    {
+      title: "Contabilidade Analítica",
+      description:
+        "Faturação dos custos para empresas do grupo? Pergunte-nos como…",
+      skeleton: <SkeletonFive />,
+      className: "border-b col-span-1 lg:col-span-2 border-neutral-800",
     },
   ];
   return (
-    <div className="relative z-20 py-10 lg:py-40 max-w-7xl mx-auto">
+    <div className="relative z-20 py-10 lg:py-12 max-w-7xl mx-auto">
       <div className="px-8">
         <h4 className="font-bold text-3xl lg:text-5xl lg:leading-tight max-w-5xl mx-auto text-center tracking-tight  text-white">
           Soluções
         </h4>
 
-        <p className="text-sm lg:text-base  max-w-2xl  my-4 mx-auto  text-center font-normal text-neutral-300">
+        <p className="text-2xl lg:text-4xl font-semibold max-w-2xl  my-4 mx-auto  text-center text-[#74c4cb]">
           Você idealiza, nós realizamos!
         </p>
       </div>
@@ -85,7 +94,7 @@ const FeatureCard = ({
 
 const FeatureTitle = ({ children }: { children?: React.ReactNode }) => {
   return (
-    <p className=" max-w-5xl mx-auto text-left tracking-tight text-white text-xl md:text-2xl md:leading-snug">
+    <p className=" max-w-5xl mx-auto text-left tracking-tight text-white text-xl md:text-2xl md:leading-snug font-bold">
       {children}
     </p>
   );
@@ -97,7 +106,7 @@ const FeatureDescription = ({ children }: { children?: React.ReactNode }) => {
       className={cn(
         "text-sm md:text-base  max-w-4xl text-left mx-auto",
         " text-center font-normal text-neutral-300",
-        "text-left max-w-sm mx-0 md:text-sm my-2"
+        "text-left max-w-sm mx-0 md:text-sm my-2 font-semibold"
       )}
     >
       {children}
@@ -127,24 +136,7 @@ export const SkeletonOne = () => {
   );
 };
 
-export const SkeletonThree = () => {
-  return (
-    <div className="relative flex py-8 px-2 gap-10 h-full">
-      <div className="w-full  mx-auto bg-white dark:bg-neutral-900 shadow-2xl group h-80">
-        <div className="flex flex-1 w-full h-full flex-col space-y-2  ">
-          {/* TODO */}
-          <Image
-            src={contabilidadeSolution}
-            alt="header"
-            width={800}
-            height={600}
-            className="h-full w-full aspect-square object-cover object-left-top rounded-sm"
-          />
-        </div>
-      </div>
-    </div>
-  );
-};
+
 
 export const SkeletonTwo = () => {
   return (
@@ -153,7 +145,26 @@ export const SkeletonTwo = () => {
         <div className="flex flex-1 w-full h-full flex-col space-y-2  ">
           {/* TODO */}
           <Image
-            src={interfacesolution}
+            src={colaboradorsolution}
+            alt="header"
+            width={800}
+            height={600}
+            className="h-full w-full aspect-square object-left-top rounded-sm"
+          />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export const SkeletonThree = () => {
+  return (
+    <div className="relative flex py-8 px-2 gap-10 h-full">
+      <div className="w-full  mx-auto bg-white dark:bg-neutral-900 shadow-2xl group h-80">
+        <div className="flex flex-1 w-full h-full flex-col space-y-2  ">
+          {/* TODO */}
+          <Image
+            src={fateletronicasolution}
             alt="header"
             width={800}
             height={600}
@@ -172,7 +183,7 @@ export const SkeletonFour = () => {
         <div className="flex flex-1 w-full h-full flex-col space-y-2  ">
           {/* TODO */}
           <Image
-            src={websitesolution}
+            src={contpublicasolution}
             alt="header"
             width={800}
             height={600}
@@ -183,3 +194,24 @@ export const SkeletonFour = () => {
     </div>
   );
 };
+
+export const SkeletonFive = () => {
+  return (
+    <div className="relative flex py-8 px-2 gap-10 h-full">
+      <div className="w-full  mx-auto bg-white dark:bg-neutral-900 shadow-2xl group h-80">
+        <div className="flex flex-1 w-full h-full flex-col space-y-2  ">
+          {/* TODO */}
+          <Image
+            src={contanaliticasolution}
+            alt="header"
+            width={800}
+            height={600}
+            className="h-full w-full aspect-square object-cover object-left-top rounded-sm"
+          />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+
