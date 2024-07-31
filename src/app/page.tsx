@@ -56,7 +56,7 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import navhomescreen from "../../public/images/navhomescreen.jpg";
 import navitems from "../../public/images/navitems.png";
-import { FeaturesSectionDemo } from "./test/page";
+import FeaturesSectionDemo from "./test/page";
 import Navbar from "./components/navbar";
 import Footer from "./components/footer";
 
